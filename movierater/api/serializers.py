@@ -18,3 +18,11 @@ class MovieSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'description']
 
 
+class MovieFullSerializer(serializers.ModelSerializer):
+    rating = RatingSerializer(many=True)
+
+    class Meta:
+        model = Movie
+        fields = ['id', 'title', 'description', 'rating']
+        # fields = ['id', 'title', 'description']
+
