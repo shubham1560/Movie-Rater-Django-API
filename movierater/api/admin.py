@@ -10,6 +10,7 @@ class MovieAdmin(admin.ModelAdmin):
 
 class RatingAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'movie', 'stars')
+    # fields = ('movie',)
 
 
 admin.site.register(Movie, MovieAdmin)
