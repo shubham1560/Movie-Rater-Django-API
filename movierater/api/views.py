@@ -9,4 +9,4 @@ def first(request):
 
 
 def api(request):
-    return HttpResponse("Api"+ str(request))
+    return HttpResponse("Api" + str(request))
