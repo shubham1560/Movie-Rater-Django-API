@@ -27,7 +27,19 @@ class MovieViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['POST'])
     def rate_movie(self, request, pk=None):
-        response = {'message': "it's working"}
+        # print(pk)
+        a = Movie.objects.all()
+        result = []
+        for y in a:
+            z = {"title": "", "description": ""}
+            # print(y.title, y.description)
+            z["description"]= y.description
+            z["title"]= y.title
+            # print(z["title"], z["description"])
+            result.append(z)
+        print(result)
+        # print(a)
+        response = {"movies": result}
         return Response(response, status=status.HTTP_200_OK)
 
 
