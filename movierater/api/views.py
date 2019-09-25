@@ -5,6 +5,7 @@ from .models import Movie, Rating
 from .serializers import MovieSerializer, RatingSerializer, MovieFullSerializer
 from rest_framework.response import Response
 # Create your views here.
+from django.contrib.auth.models import User
 from rest_framework.decorators import action
 
 
@@ -28,10 +29,21 @@ class MovieViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['POST'])
     def rate_movie(self, request, pk=None):
         # print(pk)
-        print(request.data)
-        a = Movie.objects.get(id=pk)
-        # result = []
-        result = [{"title": a.title, "description": a.description}]
+        # print(request.data)
+        movie = Movie.objects.get(id=pk)
+        user = User.objects.get(id=1)
+        # user = request.user
+        print(user.username)
+        if 'stars' in request.data:
+            stars = request.data['stars']
+            try:
+                rating = Rating.objects.get(user=user.id, movie=movie.id)
+                rating.stars = stars
+                rating.save()
+            except:
+                Rating.objects.create(user=user, movie=movie, stars=stars)
+            # result = []
+        result = [{"title": movie.title, "description": movie.description}]
         # for y in a:
         #     z = {"title": "", "description": "", "id":""}
         #     z["description"] = y.description
