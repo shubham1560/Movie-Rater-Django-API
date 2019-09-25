@@ -40,10 +40,15 @@ class MovieViewSet(viewsets.ModelViewSet):
                 rating = Rating.objects.get(user=user.id, movie=movie.id)
                 rating.stars = stars
                 rating.save()
+                actiondata = "updation"
             except:
-                Rating.objects.create(user=user, movie=movie, stars=stars)
+                rating = Rating.objects.create(user=user, movie=movie, stars=stars)
+                actiondata = "Creation"
+            serializer = RatingSerializer(rating, many=False)
+            result = serializer.data
+
             # result = []
-        result = [{"title": movie.title, "description": movie.description}]
+        # result = [{"title": movie.title, "description": movie.description}]
         # for y in a:
         #     z = {"title": "", "description": "", "id":""}
         #     z["description"] = y.description
@@ -52,7 +57,7 @@ class MovieViewSet(viewsets.ModelViewSet):
         #     result.append(z)
         # print(result)
         # print(a)
-        response = {"movies": result}
+        response = {"rating": result, "action": actiondata}
         return Response(response, status=status.HTTP_200_OK)
 
 
