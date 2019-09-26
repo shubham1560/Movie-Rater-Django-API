@@ -7,6 +7,7 @@ from rest_framework.response import Response
 # Create your views here.
 from django.contrib.auth.models import User
 from rest_framework.decorators import action
+from rest_framework.authentication import TokenAuthentication
 
 
 def first(request):
@@ -19,6 +20,7 @@ def api(request):
 
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
+    authentication_classes = (TokenAuthentication, )
     # serializer_class = MovieSerializer
 
     def get_serializer_class(self):
@@ -31,9 +33,12 @@ class MovieViewSet(viewsets.ModelViewSet):
         # print(pk)
         # print(request.data)
         movie = Movie.objects.get(id=pk)
-        user = User.objects.get(id=1)
+        # user = User.objects.get(id=1)
+        user = request.user
+        print(user)
         # user = request.user
-        print(user.username)
+        result = []
+        actiondata = ""
         if 'stars' in request.data:
             stars = request.data['stars']
             try:
