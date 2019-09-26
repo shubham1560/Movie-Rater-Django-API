@@ -2,7 +2,7 @@
 from django.http import HttpResponse
 from rest_framework import viewsets, status
 from .models import Movie, Rating
-from .serializers import MovieSerializer, RatingSerializer, MovieFullSerializer
+from .serializers import MovieSerializer, RatingSerializer, MovieFullSerializer, UserSerializer
 from rest_framework.response import Response
 # Create your views here.
 from django.contrib.auth.models import User
@@ -16,6 +16,11 @@ def first(request):
 
 def api(request):
     return HttpResponse("Api" + str(request))
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class MovieViewSet(viewsets.ModelViewSet):
