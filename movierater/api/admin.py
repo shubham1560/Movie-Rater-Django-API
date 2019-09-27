@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Movie, Rating
+from .models import Movie, Rating, Te
 
 # Register your models here.
 
@@ -13,5 +13,6 @@ class RatingAdmin(admin.ModelAdmin):
     # fields = ('movie',)
 
 
+admin.site.register(Te)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Rating, RatingAdmin)

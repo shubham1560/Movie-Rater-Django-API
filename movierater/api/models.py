@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+import random, string
 
 class Movie(models.Model):
     title = models.CharField(max_length=32)
@@ -32,4 +32,9 @@ class Rating(models.Model):
     class Meta:
         unique_together = (('user', 'movie'), )
         index_together = (('user', 'movie'), )
+
+
+class Te(models.Model):
+    name = models.CharField(max_length=30)
+    id = models.BigAutoField(primary_key=True)
 
