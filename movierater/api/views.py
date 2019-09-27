@@ -5,6 +5,7 @@ from .models import Movie, Rating
 from .serializers import MovieSerializer, RatingSerializer, MovieFullSerializer, UserSerializer
 from rest_framework.response import Response
 # Create your views here.
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from rest_framework.decorators import action
 from rest_framework.authentication import TokenAuthentication
@@ -27,6 +28,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     authentication_classes = (TokenAuthentication, )
     # serializer_class = MovieSerializer
+    permission_classes = (IsAuthenticated, )  # even with allowed any, this will be shown only to the logged in user
 
     def get_serializer_class(self):
         if self.request.method in ['GET']:
