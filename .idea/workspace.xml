@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f6c95e-86d1-4e45-b1ee-30827f1d7ca5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movierater/movierater/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/movierater/movierater/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/movierater/movierater/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+            <state relative-caret-position="377">
+              <caret line="87" column="1" lean-forward="true" selection-start-line="79" selection-end-line="87" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -90,11 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/movierater/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state>
               <folding>
                 <element signature="e#38#74#0" expanded="true" />
               </folding>
@@ -127,8 +126,8 @@
         <option value="$PROJECT_DIR$/movierater/api/serializers.py" />
         <option value="$PROJECT_DIR$/movierater/api/admin.py" />
         <option value="$PROJECT_DIR$/movierater/api/models.py" />
-        <option value="$PROJECT_DIR$/movierater/movierater/settings.py" />
         <option value="$PROJECT_DIR$/movierater/api/views.py" />
+        <option value="$PROJECT_DIR$/movierater/movierater/settings.py" />
       </list>
     </option>
   </component>
@@ -239,13 +238,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movierater/movierater/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/movierater/movierater/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -298,11 +290,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/movierater/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state>
           <folding>
             <element signature="e#38#74#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movierater/movierater/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="87" column="1" lean-forward="true" selection-start-line="79" selection-end-line="87" selection-end-column="1" />
         </state>
       </provider>
     </entry>
