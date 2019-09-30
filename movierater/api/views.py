@@ -28,7 +28,7 @@ class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()
     authentication_classes = (TokenAuthentication, )
     # serializer_class = MovieSerializer
-    # permission_classes = (IsAuthenticated, )  # even with allowed any, this will be shown only to the logged in user
+    permission_classes = (IsAuthenticated, )  # even with allowed any, this will be shown only to the logged in user
 
     def get_serializer_class(self):
         if self.request.method in ['GET']:
