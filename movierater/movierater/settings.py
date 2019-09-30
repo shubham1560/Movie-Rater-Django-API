@@ -78,6 +78,16 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200",
 ]
 
+CORS_ALLOW_HEADERS = [
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
