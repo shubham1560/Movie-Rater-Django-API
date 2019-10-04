@@ -37,13 +37,9 @@ class MovieViewSet(viewsets.ModelViewSet):
 
     @action(detail=True, methods=['POST'])
     def rate_movie(self, request, pk=None):
-        # print(pk)
-        # print(request.data)
         movie = Movie.objects.get(id=pk)
-        # user = User.objects.get(id=1)
         user = request.user
         print(user)
-        # user = request.user
         result = []
         actiondata = ""
         if 'stars' in request.data:
@@ -58,17 +54,6 @@ class MovieViewSet(viewsets.ModelViewSet):
                 actiondata = "Creation"
             serializer = RatingSerializer(rating, many=False)
             result = serializer.data
-
-            # result = []
-        # result = [{"title": movie.title, "description": movie.description}]
-        # for y in a:
-        #     z = {"title": "", "description": "", "id":""}
-        #     z["description"] = y.description
-        #     z["title"] = y.title
-        #     z["id"] = y.id
-        #     result.append(z)
-        # print(result)
-        # print(a)
         response = {"rating": result, "action": actiondata}
         return Response(response, status=status.HTTP_200_OK)
 
