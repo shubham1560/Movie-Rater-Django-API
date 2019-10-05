@@ -43,6 +43,7 @@ class MovieViewSet(viewsets.ModelViewSet):
         result = []
         actiondata = ""
         if 'stars' in request.data:
+            print(request)
             stars = request.data['stars']
             try:
                 rating = Rating.objects.get(user=user.id, movie=movie.id)
