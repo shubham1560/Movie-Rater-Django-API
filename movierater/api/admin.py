@@ -5,11 +5,11 @@ from .models import Movie, Rating, Te
 
 
 class MovieAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'description', 'created_on')
+    list_display = ('title', 'description', 'created_on', 'last_updated')
 
 
 class RatingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'movie', 'stars', 'created_on')
+    list_display = ('user', 'movie', 'stars', 'created_on', 'last_updated')
     # fields = ('movie',)
 
 

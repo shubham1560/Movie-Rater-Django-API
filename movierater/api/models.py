@@ -32,7 +32,7 @@ class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     stars = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     created_on = models.DateTimeField(auto_now_add=True)
-    last_update = models.DateTimeField(auto_now=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         unique_together = (('user', 'movie'), )
